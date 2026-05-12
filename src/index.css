@@ -1,0 +1,71 @@
+:root {
+  --sidebar-width: 260px;
+  --navbar-height: 70px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  padding: 24px;
+  margin-top: var(--navbar-height);
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1100px) {
+  .section-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .right-col {
+    position: static !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+  .sidebar {
+    display: none; /* In a real app, we'd add a toggle */
+  }
+  .navbar {
+    width: 100% !important;
+  }
+  .page-content {
+    padding: 16px;
+  }
+}
+
+.section-layout {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 32px;
+  align-items: start;
+}
+
+.left-col {
+  min-width: 0;
+}
+
+.right-col {
+  position: sticky;
+  top: 100px;
+}
